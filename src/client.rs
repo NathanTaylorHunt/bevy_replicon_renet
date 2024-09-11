@@ -51,7 +51,7 @@ impl RepliconRenetClientPlugin {
 
     fn set_connected(
         mut client: ResMut<RepliconClient>,
-        #[cfg(feature = "renet_transport")] transport: Res<NetcodeClientTransport>,
+        #[cfg(feature = "renet_transport")] transport: Option<Res<NetcodeClientTransport>>,
     ) {
         // In renet only transport knows the ID.
         // TODO: Pending renet issue https://github.com/lucaspoffo/renet/issues/153
