@@ -55,10 +55,10 @@ impl RepliconRenetClientPlugin {
     ) {
         // In renet only transport knows the ID.
         // TODO: Pending renet issue https://github.com/lucaspoffo/renet/issues/153
-        #[cfg(feature = "renet_transport")]
-        let client_id = Some(ClientId::new(transport.client_id().raw()));
-        #[cfg(not(feature = "renet_transport"))]
-        let client_id = None;
+        // #[cfg(feature = "renet_transport")]
+        // let client_id = Some(ClientId::new(transport.client_id().raw()));
+        // #[cfg(not(feature = "renet_transport"))]
+        let client_id = None;  // todo fix for steam?
 
         client.set_status(RepliconClientStatus::Connected { client_id });
     }
